@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>โชว์โลมา</title>
+</head>
+<body>
+    <h1>ตำแหน่งสถานที่ตั้งปัจจุบัน</h1>
+    <p id="location">กำลังโหลดข้อมูล...</p>
+
+    <script>
+        // ส่วนหลักสำหรับร้องขอข้อมูลตำแหน่งทางภูมิศาสตร์
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showLocation, handleError);
+        } else {
+            const locationElement = document.getElementById("location");
+            locationElement.innerHTML = "เบราว์เซอร์ของคุณไม่รองรับ Geolocation";
+        }
+        // ฟังก์ชันสำหรับแสดงข้อมูลตำแหน่งทางภูมิศาสตร์
+        function showLocation(position) {
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
+            const locationElement = document.getElementById("location");
+
+            locationElement.innerHTML = `ละติจูด: ${latitude}, ลองจิจูด: ${longitude}`;
+        }
+
+        // ฟังก์ชันสำหรับจัดการกรณีที่ไม่สามารถระบุตำแหน่งได้
+        function handleError(error) {
+            const locationElement = document.getElementById("location");
+            
+            switch(error.code) {
+                case error.PERMISSION_DENIED:
+                    locationElement.innerHTML = "ผู้ใช้ปฏิเสธให้เข้าถึงตำแหน่งทางภูมิศาสตร์";
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    locationElement.innerHTML = "ข้อมูลตำแหน่งทางภูมิศาสตร์ไม่พร้อมใช้งาน";
+                    break;
+                case error.TIMEOUT:
+                    locationElement.innerHTML = "การรอข้อมูลตำแหน่งทางภูมิศาสตร์หมดเวลา";
+                    break;
+                case error.UNKNOWN_ERROR:
+                    locationElement.innerHTML = "เกิดข้อผิดพลาดที่ไม่รู้จัก";
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>

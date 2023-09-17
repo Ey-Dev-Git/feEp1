@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แสดงรูปภาพ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .image-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* 4 คอลัมน์ */
+            grid-gap: 10px; /* ระยะห่างระหว่างรูปภาพ */
+            max-width: 800px; /* กำหนดความกว้างสูงสุดของคอลัมน์ */
+            margin: 0 auto; /* จัดตรงกลาง */
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .image-container img {
+            max-width: 100%; /* กำหนดความกว้างสูงสุดของรูปภาพเพื่อให้ไม่เกินความกว้างของคอลัมน์ */
+            height: 200px; /* ให้สูงตามอัตราส่วนเดียวกัน */
+            display: block; /* กำหนดให้รูปภาพเป็นบล็อกเพื่อจัดกลางในแต่ละแถว */
+            margin: 0 auto; /* จัดตรงกลางในแต่ละแถว */
+        }
+    </style>
+</head>
+<body>
+    <div class="image-container">
+        <img src="https://ไอเดียทรงผม.com/images/2023/07/27/xn--72czjvzci0ftdsfvb.com_0e8017077f1dc4b020b48903837836af.jpeg" alt="รูปที่ 1">
+        <img src="https://ไอเดียทรงผม.com/images/2023/07/27/xn--72czjvzci0ftdsfvb.com_0e8017077f1dc4b020b48903837836af.jpeg" alt="รูปที่ 2">
+        <img src="https://ไอเดียทรงผม.com/images/2023/07/27/xn--72czjvzci0ftdsfvb.com_0e8017077f1dc4b020b48903837836af.jpeg" alt="รูปที่ 3">
+        <img src="https://ไอเดียทรงผม.com/images/2023/07/27/xn--72czjvzci0ftdsfvb.com_0e8017077f1dc4b020b48903837836af.jpeg" alt="รูปที่ 4">
+        <img src="https://pbs.twimg.com/media/D8oGwVNU0AEcRmX.jpg" alt="รูปที่ 5">
+        <img src="https://pbs.twimg.com/media/D8oGwVNU0AEcRmX.jpg" alt="รูปที่ 6">
+        <img src="https://pbs.twimg.com/media/D8oGwVNU0AEcRmX.jpg" alt="รูปที่ 7">
+        <img src="https://pbs.twimg.com/media/D8oGwVNU0AEcRmX.jpg" alt="รูปที่ 8">
+        <img src="https://i.pinimg.com/236x/6f/96/ab/6f96abc13f9c2801c13584b18f95157d.jpg" alt="รูปที่ 9">
+        <img src="https://i.pinimg.com/236x/6f/96/ab/6f96abc13f9c2801c13584b18f95157d.jpg" alt="รูปที่ 10">
+        <img src="https://i.pinimg.com/236x/6f/96/ab/6f96abc13f9c2801c13584b18f95157d.jpg" alt="รูปที่ 11">
+    </div>
+</body>
+</html>
